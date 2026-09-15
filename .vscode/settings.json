@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": [
+        "c:\\Users\\HP\\OneDrive\\Documents\\Advance Java\\JDBC\\lib\\mysql-connector-j-26.7.0.jar"
+    ],
+    "java.project.sourcePaths": [
+        ".",
+        "JDBC\\src",
+        "RMI",
+        "Server client"
+    ]
+}
