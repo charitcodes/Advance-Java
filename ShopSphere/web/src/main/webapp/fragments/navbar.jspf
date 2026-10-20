@@ -1,0 +1,215 @@
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .ss-navbar {
+        width: 100%;
+        min-height: 64px;
+
+        background: #202020;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 18px;
+
+        position: relative;
+        z-index: 1000;
+
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.20);
+    }
+
+    .ss-logo {
+        text-decoration: none;
+        color: white;
+
+        font-size: 28px;
+        font-weight: 800;
+
+        white-space: nowrap;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .ss-logo span {
+        color: #3b82f6;
+    }
+
+    .ss-nav-links {
+        display: flex;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 8px;
+
+        margin-left: auto;
+    }
+
+    .ss-nav-link {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        height: 40px;
+
+        padding: 0 12px;
+
+        text-decoration: none;
+
+        color: white;
+
+        border: 1px solid #666;
+
+        border-radius: 7px;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        white-space: nowrap;
+
+        transition: 0.2s ease;
+    }
+
+    .ss-nav-link:hover {
+        background: white;
+        color: #202020;
+    }
+
+    .ss-logout {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        height: 40px;
+
+        padding: 0 14px;
+
+        text-decoration: none;
+
+        color: white;
+
+        background: #dc3545;
+
+        border-radius: 7px;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        white-space: nowrap;
+
+        transition: 0.2s ease;
+    }
+
+    .ss-logout:hover {
+        background: #bb2d3b;
+    }
+
+    @media (max-width: 900px) {
+
+        .ss-navbar {
+            padding: 10px;
+        }
+
+        .ss-logo {
+            font-size: 23px;
+        }
+
+        .ss-nav-links {
+            gap: 5px;
+        }
+
+        .ss-nav-link,
+        .ss-logout {
+            height: 36px;
+            padding: 0 9px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 650px) {
+
+        .ss-navbar {
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .ss-logo {
+            text-align: center;
+        }
+
+        .ss-nav-links {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+
+</style>
+
+
+<nav class="ss-navbar">
+
+    <!-- Logo -->
+    <a href="/ShopSphere/" class="ss-logo">
+        Shop<span>Sphere</span>
+    </a>
+
+
+    <div class="ss-nav-links">
+
+        <!-- Products -->
+        <a href="/ShopSphere/products"
+           class="ss-nav-link">
+            Products
+        </a>
+
+
+        <!-- Cart -->
+        <a href="/ShopSphere/cart"
+           class="ss-nav-link">
+            Cart
+        </a>
+
+
+        <!-- Wishlist -->
+        <a href="/ShopSphere/wishlist"
+           class="ss-nav-link">
+            Wishlist
+        </a>
+
+
+        <!-- Orders -->
+        <a href="/ShopSphere/orders"
+           class="ss-nav-link">
+            Orders
+        </a>
+
+
+        <!-- Logout -->
+        <a href="/ShopSphere/logout"
+           class="ss-logout">
+            Logout
+        </a>
+
+    </div>
+
+</nav>

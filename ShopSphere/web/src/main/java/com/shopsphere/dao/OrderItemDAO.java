@@ -1,0 +1,94 @@
+package com.shopsphere.dao;
+
+import com.shopsphere.model.OrderItem;
+import com.shopsphere.util.DBConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+public class OrderItemDAO {
+
+    public List<OrderItem> getItemsByOrderId(int orderId) {
+
+        List<OrderItem> items = new ArrayList<>();
+
+        String sql = "SELECT * FROM order_items " +
+                     "WHERE order_id = ? " +
+                     "ORDER BY order_item_id";
+
+        try (
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql)
+        ) {
+
+            ps.setInt(1, orderId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+
+                while (rs.next()) {
+
+                    OrderItem item = new OrderItem();
+
+                    item.setOrderItemId(
+                            rs.getInt("order_item_id")
+                    );
+
+                    item.setOrderId(
+                            rs.getInt("order_id")
+                    );
+
+                    item.setProductId(
+                            rs.getInt("product_id")
+                    );
+
+                    item.setQuantity(
+                            rs.getInt("quantity")
+                    );
+
+                    item.setPrice(
+                            rs.getDouble("price")
+                    );
+
+                    items.add(item);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return items;
+    }
+
+
+    public boolean addOrderItem(OrderItem item) {
+
+        String sql = "INSERT INTO order_items " +
+                     "(order_id, product_id, quantity, price) " +
+                     "VALUES (?, ?, ?, ?)";
+
+        try (
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql)
+        ) {
+
+            ps.setInt(1, item.getOrderId());
+            ps.setInt(2, item.getProductId());
+            ps.setInt(3, item.getQuantity());
+            ps.setDouble(4, item.getPrice());
+
+            int rows = ps.executeUpdate();
+
+            return rows > 0;
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return false;
+        }
+    }
+}
