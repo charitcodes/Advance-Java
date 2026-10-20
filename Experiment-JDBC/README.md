@@ -1,18 +1,30 @@
-## Getting Started
+# JDBC Experiment
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Overview
+This project demonstrates Java Database Connectivity (JDBC) and how Java applications interact with a database.
 
-## Folder Structure
+## Technologies Used
+- Java
+- JDBC
+- MySQL (if configured)
+- Visual Studio Code
 
-The workspace contains two folders by default, where:
+## Project Structure
+- `src/` - Java source files
+- `lib/` - External libraries, if required
+- `bin/` - Compiled output files
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Prerequisites
+- Java JDK installed
+- Java extension pack for VS Code
+- MySQL installed, if using a MySQL database
+- JDBC driver configured, if required
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## How to Run
+1. Open the project folder in VS Code.
+2. Verify the Java source files and database configuration.
+3. Configure the JDBC driver and database credentials if required.
+4. Run the main Java class from VS Code.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Author
+Charit Singhal
