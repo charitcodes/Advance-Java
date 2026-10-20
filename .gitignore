@@ -1,0 +1,12 @@
+# Java compiled files
+*.class
+
+# Maven generated files
+**/target/
+
+# VS Code settings
+.vscode/
+
+# Packaged Java applications
+*.war
+*.jar
